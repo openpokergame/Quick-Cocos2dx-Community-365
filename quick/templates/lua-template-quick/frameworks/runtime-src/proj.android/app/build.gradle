@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId "__PROJECT_PACKAGE_FULL_NAME__"
+        minSdkVersion 10
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+	/**
+	signingConfigs {
+        debug {
+        }
+        release{
+            Properties properties = new Properties()
+            //properties.load(project.rootProject.file('ant.properties').newDataInputStream())
+            properties.load(project.file('ant.properties').newDataInputStream())
+            def keyAlias_ = properties.getProperty('key.alias')
+            def keyPassword_ = properties.getProperty('key.alias.password')
+            def storeFile_ = properties.getProperty('key.store')
+            def storePassword_ = properties.getProperty('key.store.password')
+            keyAlias keyAlias_
+            keyPassword keyPassword_
+            storeFile file(storeFile_)
+            storePassword storePassword_
+        }
+    }
+	**/
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			//signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs/so'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //implementation project(':libcocos2dx')
+}
+

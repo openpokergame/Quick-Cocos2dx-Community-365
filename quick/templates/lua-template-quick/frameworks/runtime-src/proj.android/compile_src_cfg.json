@@ -1,0 +1,18 @@
+{
+	"sign" : "",
+	"key" : "",
+	"keyres" : "",
+	"copyAssets" : ["assets"],
+	"copySrc" : ["src_tw"],
+	"copyRes" : ["res_tw"],
+	"APP_FILE_PREFIX" : "",
+	"delSrc" : [
+		"lang_hi.lua",
+		"update/updateLang_hi.lua",
+		"lang_vi.lua",
+		"update/updateLang_vi.lua",
+		"lang_es.lua",
+		"update/updateLang_es.lua"
+	],
+	"delRes" : ["hi","vi","es"]
+}

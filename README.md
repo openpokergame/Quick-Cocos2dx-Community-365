@@ -1,4 +1,4 @@
-# Quick-Cocos2dx-Community
+# Quick-Cocos2dx-Community 3.6.5
 
 Quick-Cocos2dx-Community 发展自用户公认的最稳定版本 Quick-Cocos2d-x v3.3。由于官方疏于维护，并表示不在发布v3.5以后的版本。原作者因为公司战略调整和所属部门的变化，无法将精力投入到引擎上，导致引擎全部合并到c++仓库中。我们并不赞成Lua分支合并到Cocos2d-x主版本中，因为我们使用Lua作为主要开发语言，并不需要工程中包含js等部分。
 
@@ -38,3 +38,14 @@ telegram 群: [https://t.me/+yhTso4XiPPs4ODI9](https://t.me/+yhTso4XiPPs4ODI9)
 
 	 Mac 系统在 Applications 文件夹(或系统应用列表)中 player.app 。
 	 Windows 系统在桌面上的 player.exe 快捷方式。
+	
+	
+
+# 这版本已加入官方的patch，修复了以下问题
+
+1. Xcode 8.2之后，运行iOS模拟器崩溃。 补丁下载：https://pan.baidu.com/s/1pKIUf0J 替换 Quick-Cocos2dx-Community/external/lua/luajit/prebuilt/ios/libluajit.a
+2. spine 事件注销的错误修正。 补丁下载：https://pan.baidu.com/s/1gePWa6R
+3. 多摄像机渲染bugfix。 补丁下载：https://pan.baidu.com/s/1c1V1KJm
+4. 矩形拆剪嵌套渲染混乱bugfix。 补丁下载：https://pan.baidu.com/s/1o7QxGSi
+5. RenderTexture的渲染中有矩形拆剪的bugfix。 补丁下载：https://pan.baidu.com/s/1bpMXDUn
+6. MacOS 10.15 系统TTF字体花屏, 参考commit:[ macos Catalina 系统ttf显示修正](https://github.com/u0u0/Quick-Cocos2dx-Community/commit/6145679dd278371e841231c1d6657eb943755647)。 下载最新的[cocos/platform/mac/CCDevice-mac.mm](https://github.com/u0u0/Quick-Cocos2dx-Community/blob/master/cocos/platform/mac/CCDevice-mac.mm),替换并重现编译Player.
